@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"],
+        .btn-custom {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            text-decoration: none; /* Убираем подчеркивание */
+            display: inline-block; /* Для корректного отображения */
+        }
+        input[type="submit"]:hover,
+        .btn-custom:hover {
+            background-color: #4cae4c;
+        }
+        .logout-container {
+            text-align: center; /* Центрируем кнопку выхода */
+            margin-top: 15px; /* Отступ сверху */
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/admin/updateUser}" th:object="${user}" method="post">
+    <h2>Update User</h2>
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+
+    <label for="Username">Username</label>
+    <input type="text" th:field="*{username}" id="Username" placeholder="Username">
+
+    <label for="Year of birth">Year of birth</label>
+    <input type="text" th:field="*{yearOfBirth}" id="Year of birth" placeholder="Year of birth">
+
+    <label for="Password">Password</label>
+    <input type="text" th:field="*{password}" id="Password" placeholder="Password">
+
+    <input type="submit" value="Update User">
+</form>
+
+<div class="logout-container">
+    <a href="/logout" class="btn-custom">Выйти из приложения</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        .user-info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .btn-custom {
+            display: block; /* Изменяем на block для центрирования */
+            margin: 20px auto; /* Автоматические отступы слева и справа */
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            background-color: #007bff; /* Фоновый цвет кнопки */
+            color: white; /* Цвет текста */
+            text-align: center; /* Выравнивание текста по центру */
+            border-radius: 5px; /* Закругление углов кнопки */
+            text-decoration: none; /* Убирает подчеркивание ссылки */
+        }
+        .btn-custom:hover {
+            background-color: #0056b3; /* Цвет фона при наведении */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>User Information</h1>
+    <div class="user-info">
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>ID:</strong> <span th:text="${user.id}"></span></p>
+        <p><strong>Year of birth:</strong> <span th:text="${user.yearOfBirth}"></span></p>
+    </div>
+
+    <a href="/logout" class="btn-custom">Выйти из приложения</a>
+</div>
+</body>
+</html>

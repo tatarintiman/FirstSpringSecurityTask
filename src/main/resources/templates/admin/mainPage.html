@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        .user-info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .btn-custom {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Admin Information</h1>
+    <div class="user-info">
+        <p><strong>Username:</strong> <span th:text="${admin.username}"></span></p>
+        <p><strong>ID:</strong> <span th:text="${admin.id}"></span></p>
+        <p><strong>Year of birth:</strong> <span th:text="${admin.yearOfBirth}"></span></p>
+    </div>
+
+    <a href="/admin/users" class="btn-custom">Список пользователей</a>
+    <a href="/admin/addUser" class="btn-custom">Добавить пользователя</a>
+    <a href="/logout" class="btn-custom">Выйти из приложения</a>
+</div>
+</body>
+</html>
